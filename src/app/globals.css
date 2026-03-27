@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-orange: #FF6B35;
+  --color-orange-light: #FF8C61;
+  --color-navy: #1A2332;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #FFFFFF;
+  --foreground: #1F2937;
+  --card: #FFFFFF;
+  --card-foreground: #1F2937;
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2937;
+  --primary: #FF6B35;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3F4F6;
+  --secondary-foreground: #1A2332;
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  --accent: #FFF3ED;
+  --accent-foreground: #FF6B35;
+  --destructive: #EF4444;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #FF6B35;
+  --chart-1: #FF6B35;
+  --chart-2: #1A2332;
+  --chart-3: #10B981;
+  --chart-4: #3B82F6;
+  --chart-5: #8B5CF6;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1F2937;
+  --sidebar-primary: #FF6B35;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #FFF3ED;
+  --sidebar-accent-foreground: #FF6B35;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #FF6B35;
+}
+
+.dark {
+  --background: #0F1419;
+  --foreground: #F9FAFB;
+  --card: #1A2332;
+  --card-foreground: #F9FAFB;
+  --popover: #1A2332;
+  --popover-foreground: #F9FAFB;
+  --primary: #FF8C61;
+  --primary-foreground: #FFFFFF;
+  --secondary: #273444;
+  --secondary-foreground: #F9FAFB;
+  --muted: #273444;
+  --muted-foreground: #9CA3AF;
+  --accent: #2D1F14;
+  --accent-foreground: #FF8C61;
+  --destructive: #EF4444;
+  --border: #374151;
+  --input: #374151;
+  --ring: #FF8C61;
+  --chart-1: #FF8C61;
+  --chart-2: #60A5FA;
+  --chart-3: #34D399;
+  --chart-4: #A78BFA;
+  --chart-5: #FBBF24;
+  --sidebar: #1A2332;
+  --sidebar-foreground: #F9FAFB;
+  --sidebar-primary: #FF8C61;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #273444;
+  --sidebar-accent-foreground: #FF8C61;
+  --sidebar-border: #374151;
+  --sidebar-ring: #FF8C61;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Roboto', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+  }
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* PWA standalone mode */
+@media (display-mode: standalone) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+/* Bottom sheet backdrop */
+.bottom-sheet-backdrop {
+  backdrop-filter: blur(4px);
+}
+
+/* Hide scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
