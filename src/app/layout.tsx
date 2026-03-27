@@ -4,8 +4,8 @@ import { VisualEditsMessenger } from "orchids-visual-edits";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Eletricista - Orcamentos",
-  description: "App de orcamentos para eletricistas. Gere orcamentos profissionais em 60 segundos.",
+  title: "Meu Volt",
+  description: "App de orcamentos para eletricistas",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
